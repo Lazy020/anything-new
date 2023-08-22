@@ -37,13 +37,14 @@ interface resultadoP{
     }
   }
   function formataMoeda(valor:number){
-    let valorFormatado = valor.toLocaleString(pt-br,
+    let valorFormatado = valor.toLocaleString("pt-br",
     {
       style: "currency",
       currency: "BRL"
     })
     return valorFormatado;
     }
+   
   }
  
 
