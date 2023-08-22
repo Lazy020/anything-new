@@ -44,7 +44,40 @@ interface resultadoP{
     })
     return valorFormatado;
     }
+     return(
+     <div>
+     <main className='container'>
+      <img className='logo' src={logo}
+      alt='Logo calculadora melhor custo benefício combustível'
+      />
+      <h1 className='titulo'> Qual a amelhor opção?</h1>
+      <form className= "form" onSubmit={calculo}>
+         <label>Álcool (preço por litro):</label>
+         <input className= "input"
+         type="number"
+         placeholder="4.90"
+         min= '1'
+         step= "0.01"
+         required
+         value={alcoolInput}
+         onChange={ (e) => setAlcoolInput(Number(e.target.value))}
+         />
+
+        <input className="button" type="submit" value="Calcular"/>
+      </form>
+    {resultado && Object.keys(resultado).length > 0 && (
+      <section className="resultado">
+        <h2 className="titulo-resultado"> {resultado.titulo}</h2>
+        <span> Álcool:{resultado.alcool}</span>
+        <span> Gasolina:{resultado.gasolina}</span>
+      </section>
+    )}
+
+     </main>
+
+    </div>
    
+     )
   }
  
 
